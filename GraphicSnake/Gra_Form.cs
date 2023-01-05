@@ -25,24 +25,15 @@ namespace GraphicSnake
         int score;
         int highScore;
 
-        int snakeSpeed = 5;
+        int speed = 1;
 
         public Gra_Form()
         {
             InitializeComponent();
 
-            if (level == 0)
-            {
-                snakeSpeed = 5;
-            }
-            else if (level == 2)
-            {
-                snakeSpeed = 15;
-            }
-            else
-            {
-                snakeSpeed = 10;
-            }
+           
+
+            RestartGame();
         }
 
             Random rand = new Random();
@@ -191,6 +182,8 @@ namespace GraphicSnake
 
             }
 
+
+
             private void UpdatePictureBoxGraphics(object sender, PaintEventArgs e)
             {
                 Graphics playField = e.Graphics;
@@ -199,13 +192,30 @@ namespace GraphicSnake
 
                 for (int i = 0; i < Snake.Count; i++)
                 {
-                    if (i == 0)
+                    if (i != 0)
                     {
-                        snakeColor = Brushes.Black;
-                    }
+                        if (Menu_Form.snakeColor == 0)
+                        {
+                            snakeColor = Brushes.Green;
+                        }
+                        else if (Menu_Form.snakeColor == 1)
+                        {
+                            snakeColor = Brushes.Red;
+                        }
+                        else if (Menu_Form.snakeColor == 2)
+                        {
+                            snakeColor = Brushes.Purple;
+                        }
                     else
                     {
-                        snakeColor = Brushes.DarkGreen;
+                        snakeColor = Brushes.White;
+                    }
+                  
+                    }
+
+                    else
+                    {
+                        snakeColor = Brushes.Black;
                     }
 
                 playField.FillEllipse(snakeColor, new Rectangle
@@ -226,8 +236,26 @@ namespace GraphicSnake
             }
 
             private void RestartGame()
+
+
             {
-                maxWidth = playingField.Width / Settings.Width - 1;
+
+            if (level == 0)
+            {
+                timer.Interval = 100;
+            }
+            else if (level == 2)
+            {
+                timer.Interval = 50;
+            }
+            else
+            {
+                timer.Interval = 75;
+            }
+
+          
+
+            maxWidth = playingField.Width / Settings.Width - 1;
                 maxHeight = playingField.Height / Settings.Height - 1;
 
                 Snake.Clear();
@@ -284,7 +312,11 @@ namespace GraphicSnake
                     najlepszyWynik.Text = "High Score: " + Environment.NewLine + highScore;
                     najlepszyWynik.ForeColor = Color.Maroon;
                     najlepszyWynik.TextAlign = ContentAlignment.MiddleCenter;
-                }
+
+                     
+                     Menu_Form.scores.Add(score);
+                     Menu_Form.players.Add(NazwaGracza_Form.nazwaGracza);
+            }
             }
 
 

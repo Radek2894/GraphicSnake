@@ -17,32 +17,34 @@ namespace GraphicSnake
 {
     public partial class Menu_Form : Form
     {
-       
-
-        public static string nazwaGracza = "GalAnonim";
+   
         public static int poziomTrudnosci = 1;
         public static int snakeColor = 0;
         public static List<int> scores = new List<int>();
         public static List<string> players = new List<string>();
 
 
-        public static System.Windows.Media.MediaPlayer player = new System.Windows.Media.MediaPlayer();
+        //public static System.Windows.Media.MediaPlayer player = new System.Windows.Media.MediaPlayer();
 
         public Menu_Form()
         {
             InitializeComponent();
-            player.MediaEnded += MediaEnded;
-            player.Open(new Uri(@"C:\Users\Admin\Desktop\GraphicSnake\SnakeSong.wav"));
-            player.Play();
-            
 
-        }
+           
 
-            public void MediaEnded(object sender, EventArgs e)
-            {
-                player.Open(new Uri(@"C:\Users\Admin\Desktop\GraphicSnake\SnakeSong.wav"));
-                player.Play();
-            }
+           
+            //    player.MediaEnded += MediaEnded;
+            //    player.Open(new Uri(@"C:\Users\Admin\Desktop\GraphicSnake\SnakeSong.wav"));
+            //    player.Play();
+        }  
+
+        //}
+
+        //    public void MediaEnded(object sender, EventArgs e)
+        //    {
+        //        player.Open(new Uri(@"C:\Users\Admin\Desktop\GraphicSnake\SnakeSong.wav"));
+        //        player.Play();
+        //    }
         
 
 

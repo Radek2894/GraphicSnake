@@ -6,22 +6,13 @@ using System.Threading.Tasks;
 
 namespace GraphicSnake
 {
-     class Settings
+    public static class Settings
     {
-        public static int Width { get; set; }
+        public const int Width = 16;
 
-        public static int Height { get; set; }
+        public const int Height  = 16;
 
-        public static string directions;
-
-
-        public Settings()
-        {
-            Width = 16;
-            Height = 16;
-            directions = "right";
-
-        }
+        public static string directions = "right";
 
     }
 }

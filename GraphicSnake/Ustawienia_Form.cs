@@ -30,12 +30,12 @@ namespace GraphicSnake
 
        
 
-        private void Set_Level(object sender, System.EventArgs e)
+        private void Set_Level(object? sender, System.EventArgs e)
         {
             Menu_Form.poziomTrudnosci = poziomTrudnosci.SelectedIndex;
         }
 
-        private void Set_SnakeColor(object sender, System.EventArgs e)
+        private void Set_SnakeColor(object? sender, System.EventArgs e)
         {
             Menu_Form.snakeColor = snakeColor.SelectedIndex;
         }

@@ -75,6 +75,7 @@
             this.nazwa.Name = "nazwa";
             this.nazwa.Size = new System.Drawing.Size(168, 27);
             this.nazwa.TabIndex = 8;
+            this.nazwa.Tag = "nazwa";
             // 
             // NazwaGracza_Form
             // 

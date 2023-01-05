@@ -44,6 +44,7 @@
             this.playingField.Size = new System.Drawing.Size(649, 793);
             this.playingField.TabIndex = 0;
             this.playingField.TabStop = false;
+            this.playingField.Paint += new System.Windows.Forms.PaintEventHandler(this.UpdatePictureBoxGraphics);
             // 
             // wynikGracza
             // 
@@ -67,6 +68,10 @@
             this.najlepszyWynik.TabIndex = 6;
             this.najlepszyWynik.Text = "Najlepszy wynik:";
             // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.GameTimerEvent);
+            // 
             // Gra_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -78,6 +83,8 @@
             this.Controls.Add(this.playingField);
             this.Name = "Gra_Form";
             this.Text = "Gra_Form";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
             ((System.ComponentModel.ISupportInitialize)(this.playingField)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

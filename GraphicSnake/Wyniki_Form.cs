@@ -14,6 +14,7 @@ namespace GraphicSnake
     {
         public Wyniki_Form()
         {
+          
             InitializeComponent();
             switch (Menu_Form.players.Count)
             {
